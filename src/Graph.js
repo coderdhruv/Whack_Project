@@ -139,6 +139,7 @@ class Graph extends React.Component{
         this.setState({
             shelf_list1 : shelf_list
         })
+        console.log(this.state.shelf_list1)
         this.setState({
             nodes1 : nodes
         })
@@ -338,7 +339,11 @@ class Graph extends React.Component{
       }
     render(){
         return(
-            <div></div>
+            <div>
+                <Graph >
+                    graph = {this.graph}
+                </Graph>
+            </div>
         );
     }
 }
