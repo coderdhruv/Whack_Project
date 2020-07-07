@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { useState, useContext , Component} from 'react'
 import "../App.css";
-// import { makeStyles } from "@material-ui/core/styles";
+import GlobalState from '../contexts/GlobalState'
+import { makeStyles } from "@material-ui/core/styles";
 import {
     AppBar,
     Toolbar,
@@ -14,27 +15,46 @@ import {
     Paper,
     ButtonBase,
   } from "@material-ui/core";
+  import uuid from 'uuid/v1'
 
-export class AddItem extends Component {
-    render() {
-      // const classes = useStyles();
-      // const handleChange = (event) => {
-      //   setValue(event.target.value);
-      // };
-      // const [value, setValue] = React.useState("");
-        return (
-            <div>
-            <TextField
-              id="standard-multiline-flexible"
-              label="Your List Please"
-              // multiline
-              rowsMax={4}
-              // value={value}
-              // onChange={handleChange}
-            />
-            </div>
-        )
-    }
-}
+  export const AddItem = () => {
+    const [amount, setAmount] = useState(0);
+    const [name, setName] = useState("");
+    const { addProd } = useContext(GlobalState)
+    
+    // const { addProd } = useContext(GlobalState)
+    const addnewItem = (e) =>{
+      e.preventDefault();
+      const newProd ={
+        id : uuid(),
+        name,
+        amount : parseInt(amount)
+      }
+      setAmount(0);
+      setName("");
+        addProd(newProd);
+        console.log(newProd)
+      }
+  return (
+    <div>
+      <form noValidate autoComplete="off" onSubmit={addnewItem}>
+          <TextField id="standard-basic" 
+            label="Item you want to buy"
+            variant="filled"
+            onChange={(e) => setName(e.target.value)}/>
+          <TextField
+            id="filled"
+            label="Amount"
+            type="number"
+            variant="filled"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={(e) => setAmount(e.target.value)}
+          />    
+          <Button type="submit" value="Add Item" variant="contained" color="secondary ">Add Item</Button>
+      </form>
+    </div>
+  )
+};
 
-export default AddItem

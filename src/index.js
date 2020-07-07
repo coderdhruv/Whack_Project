@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, IndexRoute, useRouterHistory } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import AddItem from './components/AddItem';
+// import AddItem from './components/AddItem';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <Route path="/" component={App}/>
-    <Route path="/test" component={AddItem}/>
+    {/* <Route path="/test" component={AddItem}/> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

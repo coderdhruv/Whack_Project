@@ -3,7 +3,10 @@ import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
 import Map from './components/Map';
-import AddItem from './components/AddItem';
+import { AddItem } from './components/AddItem';
+import { ItemList } from './components/ItemList';
+import { Item } from './components/Item';
+import { GlobalStateProvider } from "./contexts/GlobalState.js";
 import {
   AppBar,
   Toolbar,
@@ -142,7 +145,10 @@ function App() {
             </PopupState>
           </Grid>
           <Grid item xs={2}>
+          <GlobalStateProvider>
             <AddItem />
+            <ItemList />
+          </GlobalStateProvider>
           </Grid>
           <Grid item xs={12} className={classes.bigDaddy}>
             <Map />
