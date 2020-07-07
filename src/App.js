@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
+import Map from './components/Map';
+import AddItem from './components/AddItem';
 import {
   AppBar,
   Toolbar,
@@ -139,18 +141,11 @@ function App() {
               )}
             </PopupState>
           </Grid>
-          <Grid item xs={4}>
-            <TextField
-              id="standard-multiline-flexible"
-              label="Your List Please"
-              multiline
-              rowsMax={4}
-              value={value}
-              onChange={handleChange}
-            />
+          <Grid item xs={2}>
+            <AddItem />
           </Grid>
           <Grid item xs={12} className={classes.bigDaddy}>
-            Map Here
+            <Map />
           </Grid>
         </Grid>
       </div>

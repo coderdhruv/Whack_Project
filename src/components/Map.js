@@ -119,7 +119,7 @@ class Map extends React.Component {
         return(
           <div>
             <canvas ref="canvas" width={window.innerWidth} height={window.innerHeight} style={{
-            border: '2px solid #000',
+            // border: '2px solid #000',
             marginTop: 10,
             }} onClick={e => {
                 alert(e.clientX + "," + e.clientY)

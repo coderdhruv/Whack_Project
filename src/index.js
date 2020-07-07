@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, IndexRoute, useRouterHistory } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import AddItem from './components/AddItem';
 import * as serviceWorker from './serviceWorker';
-import Map from './Map';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Route path="/App" component={App}/>
-    <Route path="/Map" component={Map}/>
+    <Route path="/" component={App}/>
+    <Route path="/test" component={AddItem}/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
