@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
+import Map from "./Map.js"
 import {
   AppBar,
   Toolbar,
@@ -150,7 +151,7 @@ function App() {
             />
           </Grid>
           <Grid item xs={12} className={classes.bigDaddy}>
-            Map Here
+            <Map/>
           </Grid>
         </Grid>
       </div>

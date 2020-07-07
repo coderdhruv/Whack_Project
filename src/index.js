@@ -5,6 +5,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Map from './Map';
+import Graph from './Graph';
+
 
 
 
@@ -13,6 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
     <Route path="/App" component={App}/>
     <Route path="/Map" component={Map}/>
+    <Route path="/Graph" component={Graph}/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
