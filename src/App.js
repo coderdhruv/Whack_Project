@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
-import Map from "./Map.js"
+import Map from "./Map"
 import {
   AppBar,
   Toolbar,
