@@ -2,7 +2,15 @@ import React from "react";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import "./images/mcph.jpg";
+<<<<<<< HEAD
 import Map from "./Map"
+=======
+import Map from './components/Map';
+import { AddItem } from './components/AddItem';
+import { ItemList } from './components/ItemList';
+import { Item } from './components/Item';
+import { GlobalStateProvider } from "./contexts/GlobalState.js";
+>>>>>>> 3d8f6090243240530ccb27e587fa33ca0ea5ac0c
 import {
   AppBar,
   Toolbar,
@@ -140,18 +148,18 @@ function App() {
               )}
             </PopupState>
           </Grid>
-          <Grid item xs={4}>
-            <TextField
-              id="standard-multiline-flexible"
-              label="Your List Please"
-              multiline
-              rowsMax={4}
-              value={value}
-              onChange={handleChange}
-            />
+          <Grid item xs={2}>
+          <GlobalStateProvider>
+            <AddItem />
+            <ItemList />
+          </GlobalStateProvider>
           </Grid>
           <Grid item xs={12} className={classes.bigDaddy}>
+<<<<<<< HEAD
             <Map/>
+=======
+            <Map />
+>>>>>>> 3d8f6090243240530ccb27e587fa33ca0ea5ac0c
           </Grid>
         </Grid>
       </div>
